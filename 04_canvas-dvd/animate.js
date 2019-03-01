@@ -26,9 +26,10 @@ var clear = function(e) {
 //sets up dvd animation
 var dvdLogoSetup = function() {
   //reset so no 2 animation frames exist at a time
-  window.cancelAnimationFrame( requestID);
+
   //clear whats on the screen
   clear();
+  window.cancelAnimationFrame( requestID);
   //width and height of the picture
   var rectWidth = 100;
   var rectHeight = 50;
