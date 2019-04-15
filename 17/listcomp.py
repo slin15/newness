@@ -50,11 +50,10 @@ def threeLoopy():
 
 print(threeLoopy())
 
-# def threeCompy():
-#     return = [0 for x in range(0,9) if (x < 4 or x == 6) else 1 if (x==4) else 2 if (x == 5 or x==7) else 0]
-#
-# print(threeCompy())
+def threeCompy():
+    return [0 if (x < 4 or x == 6) else 1 if (x==4) else 2 if (x == 5 or x==7) else 4 for x in range(0,9)]
 
+print(threeCompy())
 
 #6
 def sixLoopy(num):
@@ -72,7 +71,7 @@ def sixCompy(num):
 
 print(sixCompy(36))
 
-#4 all composites on range[0,100] in ascending order
+#4 all composites in range[0,100] in ascending order
 def fourLoopy():
     list = []
     for i in range(101):
@@ -86,3 +85,35 @@ def fourCompy():
     return [x for x in range(101) if len(sixLoopy(x)) > 2]
 
 print(fourCompy())
+
+#5 all primes in range[0,100] in ascending order
+def fiveLoopy():
+    composites= fourLoopy()
+    list = []
+    for i in range(101):
+        if i not in composites:
+            list.append(i)
+    return list
+
+def fiveCompy():
+    composites = fourLoopy()
+    return [x for x in range(101) if x not in composites]
+
+
+#7 Transpose a matrix (turns rows into columns and viceversa...)
+
+def sevenLoopy(matrix):
+    list = []
+    for i in range(len(matrix[0])):
+        x = []
+        for y in range(len(matrix)):
+            x.append(matrix[y][i])
+        list.append(x)
+    return list
+
+print(sevenLoopy([[1,2,3],[4,5,6]]))
+
+def sevenCompy(matrix):
+    return [[matrix[x][i] for x in range(len(matrix))] for i in range(len(matrix[0]))]
+
+print(sevenCompy([[1,2,3],[4,5,6]]))
