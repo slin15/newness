@@ -27,6 +27,8 @@ union of the sets a and b, denoted a u b
 def union(a, b):
     return a[:]+[x for x in b if x not in a]
 
+print(union([], [1]))
+print(union([], []))
 print(union([1,2,3], [2,3,4]))
 
 '''
@@ -35,6 +37,8 @@ intersection of sets a and b, denoted a n b
 def intersection(a, b):
     return [x for x in a if x in b]
 
+print(intersection([], []))
+print(intersection([], [1]))
 print(intersection([1, 2, 3], [2, 3, 4]))
 
 '''
@@ -43,6 +47,8 @@ difference of the sets u and a, denoted u/a
 def difference(u, a):
     return [x for x in u if x not in a]
 
+print(difference([], []))
+print(difference([], [1]))
 print(difference([1, 2, 3], [2, 3, 4]))
 print(difference([2, 3, 4], [1, 2, 3]))
 
@@ -52,6 +58,8 @@ symmetric difference of a and b, denoted a triangle b
 def sym_diff(a, b):
     return difference(union(a, b), intersection(a, b))
 
+print(sym_diff([], []))
+print(sym_diff([], [1]))
 print(sym_diff([1,2,3], [2,3,4]))
 
 '''
@@ -61,8 +69,14 @@ all ordered possible pairs of a and b
 def cart(a, b):
     return [(x,y) for x in a for y in b]
 
+print(cart([], []))
+print(cart([], [1]))
 print(cart([1,2,3], [2,3,4]))
 
 '''
-??? of sets a and b, denoted a y b 
+??? of sets a and b, denoted a y b
 '''
+def cool(a, b):
+     return [1 for x in a for y in b for z in a+b]
+
+print(cool([1, 2, 3], [2, 3, 4]))
